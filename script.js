@@ -23,7 +23,7 @@ updateTable=()=>{
         foodArr.push(ele[i].value)
     }
     if(foodArr.length<2){
-        alert("Please, check-mark minimum two food Catogary")
+        alert("Please, choose minimum two from food Catogary")
         return false;
     }
     
