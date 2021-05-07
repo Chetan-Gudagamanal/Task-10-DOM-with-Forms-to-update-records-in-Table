@@ -14,7 +14,6 @@ updateTable=()=>{
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7);
-    var cell9 = row.insertCell(8);
 
     let ele=document.getElementsByName("Food");
     let m=ele.length;
@@ -37,15 +36,14 @@ updateTable=()=>{
         gender=document.getElementsByName("Gender")[1].value
     }
 
-    cell1.innerHTML = `${n}`;
-    cell2.innerHTML = `${document.getElementById("FirstName").value}`;
-    cell3.innerHTML = `${document.getElementById("LastName").value}`;
-    cell4.innerHTML = `${document.getElementById("Address").value}`;
-    cell5.innerHTML = `${document.getElementById("PIN").value}`;
-    cell6.innerHTML = `${gender}`;
-    cell7.innerHTML = `${food}`;
-    cell8.innerHTML = `${document.getElementById("State").value}`;
-    cell9.innerHTML = `${document.getElementById("Country").value}`;
+    cell1.innerHTML = `${document.getElementById("FirstName").value}`;
+    cell2.innerHTML = `${document.getElementById("LastName").value}`;
+    cell3.innerHTML = `${document.getElementById("Address").value}`;
+    cell4.innerHTML = `${document.getElementById("PIN").value}`;
+    cell5.innerHTML = `${gender}`;
+    cell6.innerHTML = `${food}`;
+    cell7.innerHTML = `${document.getElementById("State").value}`;
+    cell8.innerHTML = `${document.getElementById("Country").value}`;
 
     
     document.getElementById("myForm").reset()
