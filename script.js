@@ -46,6 +46,17 @@ updateTable=()=>{
     cell8.innerHTML = `${document.getElementById("Country").value}`;
 
     
-    document.getElementById("myForm").reset()
+    var x=setInterval(()=>{
+        if(document.querySelector("#myTable > tbody").childElementCount===n+1){
+            document.querySelector(".btn").setAttribute("style","background-color: green;")
+            document.querySelector(".btn").innerHTML="Row added in below Table"
+        }
+    },1000)
+    setTimeout(()=>{
+        clearInterval(x);
+        document.querySelector(".btn").innerHTML="Submit"
+        document.querySelector(".btn").removeAttribute("style")
+        document.getElementById("myForm").reset()
+    },2500)
 
 }
