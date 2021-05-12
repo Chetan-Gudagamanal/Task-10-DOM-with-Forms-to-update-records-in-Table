@@ -1,5 +1,28 @@
 
-
+let ele=document.getElementsByName("Food");
+let len=ele.length;
+for(i=0;i<len;i++){
+    ele[i].setAttribute("oninvalid","this.setCustomValidity('Please Select minimum two from these')")
+    ele[i].setAttribute("title","Please Select atleast two items")
+}
+validate=()=>{
+    let m=ele.length;
+    let foodArr=[]
+    for(i=0;i<m;i++){
+        if(ele[i].checked)
+        foodArr.push(ele[i].value)
+    }
+    if(foodArr.length>=2){
+        for(i=0;i<m;i++){
+            ele[i].removeAttribute("required")
+        }
+    }
+    else{
+        for(i=0;i<m;i++){
+            ele[i].setAttribute("required","true")
+        }
+    }
+}
 updateTable=()=>{
     var n = document.querySelector("#myTable > tbody").childElementCount
     // var k=document.querySelectorAll("#myTable > tbody > tr").length
@@ -15,7 +38,7 @@ updateTable=()=>{
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7);
 
-    let ele=document.getElementsByName("Food");
+    //let ele=document.getElementsByName("Food");
     let m=ele.length;
     let foodArr=[]
     for(i=0;i<m;i++){
