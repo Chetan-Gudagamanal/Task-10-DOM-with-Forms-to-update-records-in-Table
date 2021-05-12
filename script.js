@@ -1,10 +1,12 @@
-
+//Code to display msg "minimum two items from checkbox required"
 let ele=document.getElementsByName("Food");
 let len=ele.length;
 for(i=0;i<len;i++){
     ele[i].setAttribute("oninvalid","this.setCustomValidity('Please Select minimum two from these')")
     ele[i].setAttribute("title","Please Select atleast two items")
 }
+
+//Code to validate: minimum two checkboxes are selected.
 validate=()=>{
     let m=ele.length;
     let foodArr=[]
@@ -23,6 +25,8 @@ validate=()=>{
         }
     }
 }
+
+//Code to update records in table on: Form submit.
 updateTable=()=>{
     var n = document.querySelector("#myTable > tbody").childElementCount
     // var k=document.querySelectorAll("#myTable > tbody > tr").length
@@ -68,7 +72,7 @@ updateTable=()=>{
     cell7.innerHTML = `${document.getElementById("State").value}`;
     cell8.innerHTML = `${document.getElementById("Country").value}`;
 
-    
+    //Code to display temporary msg inside button after successful updation of record in table.
     var x=setInterval(()=>{
         if(document.querySelector("#myTable > tbody").childElementCount===n+1){
             document.querySelector(".btn").setAttribute("style","background-color: green;")
@@ -79,7 +83,10 @@ updateTable=()=>{
         clearInterval(x);
         document.querySelector(".btn").innerHTML="Submit"
         document.querySelector(".btn").removeAttribute("style")
-        document.getElementById("myForm").reset()
+        document.getElementById("myForm").reset();
+        for(i=0;i<len;i++){
+            ele[i].setAttribute("required","true")
+        }
     },2500)
 
 }
